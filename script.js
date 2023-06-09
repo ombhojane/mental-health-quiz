@@ -3,16 +3,16 @@ const userInput = document.getElementById("userInput");
 const sendButton = document.getElementById("sendButton");
 
 const questions = [
-  "How are you feeling today?",
-  "Have you been sleeping well?",
-  "Do you find enjoyment in activities you used to enjoy?",
-  "Have you been experiencing persistent feelings of sadness or hopelessness?",
-  "Do you often feel anxious or worried?",
-  "Have you noticed any changes in your appetite or weight?",
-  "Have you been having difficulty concentrating or making decisions?",
-  "Do you frequently experience mood swings or irritability?",
-  "Have you had thoughts of self-harm or suicide?",
-  "Are you facing any major life stressors currently?"
+  "Do you often feel a sense of hopelessness or worthlessness?",
+  "Do you experience frequent changes in your appetite or weight?",
+  "Do you struggle with constant fatigue or lack of energy?",
+  "Do you have difficulty concentrating or making decisions?",
+  "Do you frequently experience feelings of sadness or tearfulness?",
+  "Do you find it challenging to enjoy activities or hobbies that used to bring you pleasure?",
+  "Do you often feel anxious, restless, or on edge?",
+  "Do you have trouble falling asleep, staying asleep, or experiencing restful sleep?",
+  "Do you have recurrent thoughts of death or suicidal ideation?",
+  "Do you feel a sense of isolation or disconnection from others?"
 ];
 
 let currentQuestion = 0;
@@ -36,7 +36,7 @@ function processUserInput() {
   const answer = userInput.value;
   generateChatBubble(answer, true);
 
-  if (answer.toLowerCase() === "no") {
+  if (answer.toLowerCase() === "yes") {
     noCount++;
   }
 
@@ -46,7 +46,7 @@ function processUserInput() {
     if (noCount > 5) {
       alert("It is recommended that you consult a therapist.");
     } else {
-      generateChatBubble("Thank you for sharing. Take care!", false);
+      generateChatBubble("Thank you for sharing. It appears that you are mentally fine! Remember to cherish each moment, find joy in the little things, and nurture your mental well-being. You deserve to lead a fulfilling and happy life. Stay positive and embrace the beauty that surrounds you. Wishing you continued happiness and contentment on your journey!", false);
     }
     userInput.disabled = true;
     sendButton.disabled = true;
