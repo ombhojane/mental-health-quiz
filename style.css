@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: 900;
+  font-size: 28px;
+  text-align: center;
+}
+
+.chatbot-container {
+  width: 60%;
+  height: 400px; /* Set the default height to 400px */
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chat-log {
+  height: calc(100% - 50px);
+  overflow-y: auto;
+  overflow-x: hidden; /* Add this line to hide the horizontal scrollbar */
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.chat-bubble {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.user .chat-bubble {
+  background-color: #cee4e5;
+}
+
+.bot .chat-bubble {
+  background-color: #d4d2e1;
+}
+
+.bot .chat-bubble::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  border: 8px solid transparent;
+  border-right-color: #d4d2e1;
+  transform: translateY(-50%);
+}
+
+.user .chat-bubble::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  border: 8px solid transparent;
+  border-left-color: #cee4e5;
+  transform: translateY(-50%);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+  .chatbot-container {
+    width: 90%;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .chatbot-container {
+    width: 90%;
+    height: 250px;
+  }
+}
